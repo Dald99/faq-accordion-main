@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --lightPink: hsl(275, 100%, 97%);
+    --grayishPurple: hsl(292, 16%, 49%);
+    --darkPurple: hsl(292, 42%, 14%);
+    --pink: #AD28EB;
+
+    --font: "Work Sans";
+}
+
+body {
+    min-height: 100vh;
+    background: url('../assets/images/background-pattern-desktop.svg') no-repeat top center, var(--lightPink);
+    background-size: 100%;
+    max-width: 1440px;
+    font-family: var(--font), sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    font-size: 16px;
+    color: var(--grayishPurple);
+}
+
+h1 {
+    font-size: 56px;
+    margin-bottom: 8px;
+    color: var(--darkPurple);
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--darkPurple);
+    transition: color 0.3s;
+
+    &:hover {
+        color: var(--pink);
+        cursor: pointer;
+    }
+}
+
+main {
+    position: absolute;
+}
+
+.card {
+    background-color: var(--white);
+    max-width: 600px;
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.heading {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.accordion-item {
+    cursor: pointer;
+    transition: .4s;
+}
+
+.accordion-item:not(:last-child) {
+    padding: 24px 0;
+    border-bottom: var(--lightPink) solid 1px;
+}
+
+.accordion-item:last-child {
+    padding-top: 24px;
+}
+
+.accordion-text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.active {
+    margin-bottom: 24px;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (width <= 768px) {
+    body {
+        background: url('../assets/images/background-pattern-mobile.svg') no-repeat top center, var(--lightPink);
+        background-size: 100%;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .card {
+        margin: 0 24px;
+        padding: 24px;
+    }
+
+    .heading img {
+        width: 24px;
+    }
+}
+
